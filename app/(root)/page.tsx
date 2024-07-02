@@ -14,7 +14,7 @@ const Home = () => {
                         title="Welcome"
                         user={loggedIn?.firstName + " " + loggedIn?.lastName || "Guest"}
                         subtext=" Access and manage your subscriptions efficiently" />
-                        <TotalBalanceBox accounts={[]} totalBanks={0} totalCurrentBalance={1250.35} />
+                        <TotalBalanceBox accounts={[]} totalBanks={1} totalCurrentBalance={1250.35} />
 
                 </header>
             </div>
