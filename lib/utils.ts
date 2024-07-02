@@ -65,13 +65,20 @@ export const formatDateTime = (dateString: Date) => {
   };
 };
 
+/**
+ * Formats a given amount into a string representation of the currency.
+ * @param {number} amount - The amount to be formatted.
+ * @returns {string} - The formatted amount as a string.
+ */
 export function formatAmount(amount: number): string {
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
+  // Create a number formatter for the "en-AU" locale with the specified options.
+  const formatter = new Intl.NumberFormat("en-AU", {
+    style: "currency", // Format as currency.
+    currency: "AUD", // Use Australian Dollars.
+    minimumFractionDigits: 2, 
   });
 
+  // Format the amount and return the result as a string.
   return formatter.format(amount);
 }
 
