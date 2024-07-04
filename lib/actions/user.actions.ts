@@ -30,9 +30,9 @@ export const signIn = async ({ email, password }: signInProps) => {
 
 
 
-export const signUp = async (userData: SignUpParams) => {
+export const signUp = async ({password,...userData}: SignUpParams) => {
 
-    const { email, password, firstName, lastName } = userData;
+    const { email, firstName, lastName } = userData;
     let newUserAccount;
     try {
 
@@ -120,7 +120,7 @@ export const createLinkToken = async (user: User) => {
             user: {
                 client_user_id: user.$id, // The client user ID.
             },
-            client_name: user.name, // The client name.
+            client_name:`${user.firstName} ${user.lastName}`, // The client name.
             products: ['auth'] as Products[], // The products to include in the link token.
             language: 'en', // The language of the link token.
             country_codes: ['US'] as CountryCode[], // The country codes for the link token.
