@@ -79,7 +79,7 @@ export const createTransfer = async ({
         },
       },
       amount: {
-        currency: "AUD",
+        currency: "USD",
         value: amount,
       },
     };
